@@ -8,7 +8,7 @@ using System.IO.Ports;
 
 namespace Roombacs
 {
-    struct OIMode
+    public struct OIMode
     {
         public const int OFF = 0;
         public const int PASSIVE = 1;
@@ -208,7 +208,7 @@ namespace Roombacs
                 return simple;
             }
 
-            String hexstr = Convert.ToString(velocity, 16);
+            var hexstr = velocity.ToString("X4");
             String highbyte = hexstr.Substring(hexstr.Length - 4, 2);
             String lowbyte = hexstr.Substring(hexstr.Length - 2, 2);
 
